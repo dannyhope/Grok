@@ -57,7 +57,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-05-07 10:36:38 +0000</string>
+	<string>2014-05-10 14:46:29 +0000</string>
 	<key>Modifier</key>
 	<string>Danny Hope</string>
 	<key>NotesVisible</key>
@@ -1393,7 +1393,7 @@ he was sick formerly.}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{28.346456527709961, 129}, {242, 15}}</string>
+					<string>{{28.346456527709961, 129}, {465, 15}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1441,7 +1441,7 @@ he was sick formerly.}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
-\f0\b\fs24 \cf0 Example of text that could be restructured}</string>
+\f0\b\fs24 \cf0 Example of text that could be more quickly parsed with it\'92s structure made visible}</string>
 						<key>VerticalPad</key>
 						<integer>0</integer>
 					</dict>
@@ -3830,8 +3830,8 @@ simple document mapper: lets you select bits of any document (xPath?) and connec
 					<integer>40907</integer>
 					<key>Points</key>
 					<array>
-						<string>{602.50003601420599, 602.69290749512231}</string>
-						<string>{518.17069327302693, 603.27765401537056}</string>
+						<string>{602.50003601420599, 602.69290748984815}</string>
+						<string>{518.17069327302693, 603.27765400848773}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -9853,48 +9853,48 @@ dictated to them}</string>
 								hAJpSQEGkoSE
 								hAxOU0RpY3Rp
 								b25hcnkAlIQB
-								aQSShJaWEE5T
-								UGFyYWdyYXBo
-								U3R5bGWGkoSE
-								hBBOU1BhcmFn
-								cmFwaFN0eWxl
-								AJSEBENDQFMA
-								AISEhAdOU0Fy
-								cmF5AJSZDJKE
-								hIQJTlNUZXh0
-								VGFiAJSEAkNm
-								AByGkoSfngA4
-								hpKEn54AVIaS
-								hJ+eAHCGkoSf
-								ngCBjACGkoSf
-								ngCBqACGkoSf
-								ngCBxACGkoSf
-								ngCB4ACGkoSf
-								ngCB/ACGkoSf
-								ngCBGAGGkoSf
-								ngCBNAGGkoSf
-								ngCBUAGGhgCG
-								koSWlgZOU0tl
-								cm6GkoSEhAhO
-								U051bWJlcgCE
-								hAdOU1ZhbHVl
-								AJSEASqEhAFk
-								ogCGkoSWlgZO
-								U0ZvbnSGkoSE
-								hAZOU0ZvbnQe
-								lJkwhAVbNDhj
-								XQYAAAAmAAAA
-								//5IAGUAbAB2
-								AGUAdABpAGMA
-								YQBOAGUAdQBl
-								AC0AQgBvAGwA
-								ZAAAAIQBZgyE
-								AWMApgGmAKYA
-								hpKElpYHTlND
-								b2xvcoaShISE
-								B05TQ29sb3IA
-								lKYDhAJmZgCD
-								mpkZPoaGhg==
+								aQSShJaWB05T
+								Q29sb3KGkoSE
+								hAdOU0NvbG9y
+								AJSEAWMDhAJm
+								ZgCDmpkZPoaS
+								hJaWEE5TUGFy
+								YWdyYXBoU3R5
+								bGWGkoSEhBBO
+								U1BhcmFncmFw
+								aFN0eWxlAJSE
+								BENDQFMAAISE
+								hAdOU0FycmF5
+								AJSZDJKEhIQJ
+								TlNUZXh0VGFi
+								AJSEAkNmAByG
+								koSioQA4hpKE
+								oqEAVIaShKKh
+								AHCGkoSioQCB
+								jACGkoSioQCB
+								qACGkoSioQCB
+								xACGkoSioQCB
+								4ACGkoSioQCB
+								/ACGkoSioQCB
+								GAGGkoSioQCB
+								NAGGkoSioQCB
+								UAGGhgCGkoSW
+								lgZOU0ZvbnSG
+								koSEhAZOU0Zv
+								bnQelJkwhAVb
+								NDhjXQYAAAAm
+								AAAA//5IAGUA
+								bAB2AGUAdABp
+								AGMAYQBOAGUA
+								dQBlAC0AQgBv
+								AGwAZAAAAIQB
+								ZgybAJsBmwCb
+								AIaShJaWBk5T
+								S2VyboaShISE
+								CE5TTnVtYmVy
+								AISEB05TVmFs
+								dWUAlIQBKoSE
+								AWSoAIaGhg==
 										</data>
 										<key>Text</key>
 										<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
@@ -17925,34 +17925,34 @@ drag the dot to reposition it\'92s content content\
 								koSEhAxOU0Rp
 								Y3Rpb25hcnkA
 								lIQBaQSShJaW
-								Bk5TS2VyboaS
-								hISECE5TTnVt
-								YmVyAISEB05T
-								VmFsdWUAlIQB
-								KoSEAWSdg5qZ
-								mZmZmck/hpKE
-								lpYQTlNQYXJh
-								Z3JhcGhTdHls
-								ZYaShISEEE5T
-								UGFyYWdyYXBo
-								U3R5bGUAlIQE
-								Q0NAUwAAhISE
-								B05TQXJyYXkA
-								lJkMkoSEhAlO
-								U1RleHRUYWIA
-								lIQCQ2YAHIaS
-								hKSiADiGkoSk
-								ogBUhpKEpKIA
-								cIaShKSiAIGM
-								AIaShKSiAIGo
-								AIaShKSiAIHE
-								AIaShKSiAIHg
-								AIaShKSiAIH8
-								AIaShKSiAIEY
-								AYaShKSiAIE0
-								AYaShKSiAIFQ
-								AYaGAYQEWzFm
-								XQSGkoSWlgZO
+								EE5TUGFyYWdy
+								YXBoU3R5bGWG
+								koSEhBBOU1Bh
+								cmFncmFwaFN0
+								eWxlAJSEBEND
+								QFMAAISEhAdO
+								U0FycmF5AJSZ
+								DJKEhIQJTlNU
+								ZXh0VGFiAJSE
+								AkNmAByGkoSf
+								ngA4hpKEn54A
+								VIaShJ+eAHCG
+								koSfngCBjACG
+								koSfngCBqACG
+								koSfngCBxACG
+								koSfngCB4ACG
+								koSfngCB/ACG
+								koSfngCBGAGG
+								koSfngCBNAGG
+								koSfngCBUAGG
+								hgGEBFsxZl0E
+								hpKElpYGTlNL
+								ZXJuhpKEhIQI
+								TlNOdW1iZXIA
+								hIQHTlNWYWx1
+								ZQCUhAEqhIQB
+								ZKODmpmZmZmZ
+								yT+GkoSWlgZO
 								U0ZvbnSGkoSE
 								hAZOU0ZvbnQe
 								lJkkhAVbMzZj
@@ -17967,15 +17967,15 @@ drag the dot to reposition it\'92s content content\
 								Q29sb3IAlKcD
 								hAJmZoMAAEA/
 								AYaGlwIBkoSY
-								mQOSs5K0kp6S
-								n5KwkrGGlwMw
+								mQOSs5K0kpmS
+								mpKwkrGGlwMw
 								koSYmQOSs5KE
 								tacChARmZmZm
-								AAAAAYaSnpKE
-								oJ8AAISimQyS
-								o5KlkqaSp5Ko
-								kqmSqpKrkqyS
-								rZKukq+GAaME
+								AAAAAYaSmZKE
+								m5sAAISdmQyS
+								npKgkqGSopKj
+								kqSSpZKmkqeS
+								qJKpkqqGAZ8E
 								hpKwkoSymTCE
 								BVs0OGNdBgAA
 								ACgAAAD//kgA
@@ -32420,11 +32420,11 @@ hover to see corresponding test}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>2</integer>
+		<integer>0</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{541, 267}, {1436, 878}}</string>
+		<string>{{4, 0}, {1436, 878}}</string>
 		<key>ListView</key>
 		<false/>
 		<key>OutlineWidth</key>
