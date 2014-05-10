@@ -57,7 +57,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-05-10 14:46:29 +0000</string>
+	<string>2014-05-10 14:52:52 +0000</string>
 	<key>Modifier</key>
 	<string>Danny Hope</string>
 	<key>NotesVisible</key>
@@ -157,59 +157,6 @@
 			<string>1 pt = 1 px</string>
 			<key>GraphicsList</key>
 			<array>
-				<dict>
-					<key>Bounds</key>
-					<string>{{470, 497}, {548, 42}}</string>
-					<key>Class</key>
-					<string>ShapedGraphic</string>
-					<key>FitText</key>
-					<string>YES</string>
-					<key>Flow</key>
-					<string>Resize</string>
-					<key>ID</key>
-					<integer>465</integer>
-					<key>Shape</key>
-					<string>Rectangle</string>
-					<key>Style</key>
-					<dict>
-						<key>fill</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-						<key>shadow</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-						<key>stroke</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Align</key>
-						<integer>0</integer>
-						<key>Pad</key>
-						<integer>0</integer>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
-\cocoascreenfonts1{\fonttbl\f0\fmodern\fcharset0 Courier;}
-{\colortbl;\red255\green255\blue255;}
-\deftab720
-\pard\pardeftab720
-
-\f0\fs24 \cf0 1 what is inevitable, as often is the case with evils, too (for evil of some\
-kind is inevitable)\
-2 we say of good things as well that they 'need to be'. }</string>
-						<key>VerticalPad</key>
-						<integer>0</integer>
-					</dict>
-					<key>Wrap</key>
-					<string>NO</string>
-				</dict>
 				<dict>
 					<key>Class</key>
 					<string>TableGroup</string>
@@ -1262,7 +1209,7 @@ kind is inevitable)\
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{28.346456527709961, 492}, {221, 15}}</string>
+					<string>{{28.346456527709961, 492}, {272, 15}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1310,7 +1257,7 @@ kind is inevitable)\
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
-\f0\b\fs24 \cf0 Example semantic structure visualised}</string>
+\f0\b\fs24 \cf0 That content with semantic structure visualised}</string>
 						<key>VerticalPad</key>
 						<integer>0</integer>
 					</dict>
@@ -1593,14 +1540,75 @@ he was sick formerly.}</string>
 			<key>GraphicsList</key>
 			<array>
 				<dict>
+					<key>Bounds</key>
+					<string>{{27, 35}, {740, 59}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>YES</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>Menlo-Regular</string>
+						<key>Size</key>
+						<real>12</real>
+					</dict>
+					<key>ID</key>
+					<integer>382</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Align</key>
+						<integer>0</integer>
+						<key>Pad</key>
+						<integer>0</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 HelveticaNeue-Light;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading80\pardirnatural
+
+\f0\b\fs28 \cf0 Possible MVPs
+\b0 \
+
+\f1 - drag and drop paragraph linking\
+- simple document mapper: lets you select bits of any document (xPath?) and connect them to a part of another document}</string>
+						<key>VerticalPad</key>
+						<integer>0</integer>
+					</dict>
+					<key>Wrap</key>
+					<string>NO</string>
+				</dict>
+				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
 					<key>ID</key>
 					<integer>27</integer>
 					<key>Points</key>
 					<array>
-						<string>{553.99137709620209, 122.27095057021397}</string>
-						<string>{968, 143}</string>
+						<string>{553.99137709620209, 287.27095057021393}</string>
+						<string>{968, 308}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -1635,7 +1643,7 @@ he was sick formerly.}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{541, 115.9208984375}, {12, 12}}</string>
+					<string>{{541, 280.9208984375}, {12, 12}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
@@ -1669,7 +1677,7 @@ he was sick formerly.}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{28, 94}, {64, 12}}</string>
+					<string>{{28, 259}, {64, 12}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1735,7 +1743,7 @@ he was sick formerly.}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{221, 81.913330078125}, {64, 12}}</string>
+					<string>{{221, 246.913330078125}, {64, 12}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1801,7 +1809,7 @@ he was sick formerly.}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{420.5, 52.913330078125}, {64, 12}}</string>
+					<string>{{420.5, 217.913330078125}, {64, 12}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1872,7 +1880,7 @@ he was sick formerly.}</string>
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{951.00002670288086, 109.913330078125}, {161.7689208984375, 59}}</string>
+							<string>{{951.00002670288086, 274.913330078125}, {161.7689208984375, 59}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -1948,7 +1956,7 @@ he was sick formerly.}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{873.03298568725586, 109.913330078125}, {77.967041015625, 59}}</string>
+							<string>{{873.03298568725586, 274.913330078125}, {77.967041015625, 59}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -2020,7 +2028,7 @@ he was sick formerly.}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{582.81429672241211, 109.913330078125}, {290.21868896484375, 59}}</string>
+							<string>{{582.81429672241211, 274.913330078125}, {290.21868896484375, 59}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -2094,7 +2102,7 @@ he was sick formerly.}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{873.03298568725586, 85.913330078125}, {77.967041015625, 24}}</string>
+							<string>{{873.03298568725586, 250.913330078125}, {77.967041015625, 24}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -2200,7 +2208,7 @@ he was sick formerly.}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{951.00002670288086, 85.913330078125}, {161.7689208984375, 24}}</string>
+							<string>{{951.00002670288086, 250.913330078125}, {161.7689208984375, 24}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -2306,7 +2314,7 @@ he was sick formerly.}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{582.81429672241211, 85.913330078125}, {290.21868896484375, 24}}</string>
+							<string>{{582.81429672241211, 250.913330078125}, {290.21868896484375, 24}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -2417,7 +2425,7 @@ he was sick formerly.}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{951.00002670288086, 168.913330078125}, {161.7689208984375, 97}}</string>
+							<string>{{951.00002670288086, 333.913330078125}, {161.7689208984375, 97}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -2471,7 +2479,7 @@ we say of good things as well that they 'need to be'}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{873.03298568725586, 168.913330078125}, {77.967041015625, 97}}</string>
+							<string>{{873.03298568725586, 333.913330078125}, {77.967041015625, 97}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -2524,7 +2532,7 @@ we say of good things as well that they 'need to be'}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{582.81429672241211, 168.913330078125}, {290.21868896484375, 97}}</string>
+							<string>{{582.81429672241211, 333.913330078125}, {290.21868896484375, 97}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -2577,7 +2585,7 @@ we say of good things as well that they 'need to be'}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{873.03298568725586, 265.913330078125}, {77.967041015625, 97}}</string>
+							<string>{{873.03298568725586, 430.913330078125}, {77.967041015625, 97}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -2630,7 +2638,7 @@ we say of good things as well that they 'need to be'}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{951.00002670288086, 265.913330078125}, {161.7689208984375, 97}}</string>
+							<string>{{951.00002670288086, 430.913330078125}, {161.7689208984375, 97}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -2676,7 +2684,7 @@ we say of good things as well that they 'need to be'}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{582.81429672241211, 265.913330078125}, {290.21868896484375, 97}}</string>
+							<string>{{582.81429672241211, 430.913330078125}, {290.21868896484375, 97}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -2779,7 +2787,7 @@ we say of good things as well that they 'need to be'}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{582.81429862976074, 63.913330078125}, {306.72442626953125, 18}}</string>
+					<string>{{582.81429862976074, 228.913330078125}, {306.72442626953125, 18}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
@@ -2821,7 +2829,7 @@ we say of good things as well that they 'need to be'}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{582.81429862976074, 28}, {29, 14}}</string>
+					<string>{{582.81429862976074, 193}, {29, 14}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -2878,7 +2886,7 @@ we say of good things as well that they 'need to be'}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{27, 28}, {39, 14}}</string>
+					<string>{{27, 193}, {39, 14}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -2935,7 +2943,7 @@ we say of good things as well that they 'need to be'}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{582.81429862976074, 60.913330078125}, {485.9547119140625, 25}}</string>
+					<string>{{582.81429862976074, 225.913330078125}, {485.9547119140625, 25}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -2988,7 +2996,7 @@ we say of good things as well that they 'need to be'}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{28, 52.913330078125}, {89, 12}}</string>
+					<string>{{28, 217.913330078125}, {89, 12}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -3082,7 +3090,7 @@ we say of good things as well that they 'need to be'}</string>
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{220.55511474609381, 91.913330078125}, {37, 14}}</string>
+							<string>{{220.55511474609381, 256.913330078125}, {37, 14}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
@@ -3124,7 +3132,7 @@ we say of good things as well that they 'need to be'}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{27.000000000000057, 77.913330078125}, {524.55511474609364, 14}}</string>
+							<string>{{27.000000000000057, 242.913330078125}, {524.55511474609364, 14}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>HFlip</key>
@@ -3168,7 +3176,7 @@ we say of good things as well that they 'need to be'}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{27.000000000000057, 91.913330078125}, {131.55511474609375, 14}}</string>
+							<string>{{27.000000000000057, 256.913330078125}, {131.55511474609375, 14}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>HFlip</key>
@@ -3212,7 +3220,7 @@ we say of good things as well that they 'need to be'}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{27.000000000000057, 105.913330078125}, {524.55511474609364, 14}}</string>
+							<string>{{27.000000000000057, 270.913330078125}, {524.55511474609364, 14}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>HFlip</key>
@@ -3256,7 +3264,7 @@ we say of good things as well that they 'need to be'}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{420, 63.913330078125}, {131.55511474609375, 14}}</string>
+							<string>{{420, 228.913330078125}, {131.55511474609375, 14}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>HFlip</key>
@@ -3300,7 +3308,7 @@ we say of good things as well that they 'need to be'}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{27, 63.913330078125}, {393, 14}}</string>
+							<string>{{27, 228.913330078125}, {393, 14}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
@@ -3342,7 +3350,7 @@ we say of good things as well that they 'need to be'}</string>
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{27, 63.913330078125}, {526, 266}}</string>
+							<string>{{27, 228.913330078125}, {526, 266}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FitText</key>
@@ -3464,7 +3472,7 @@ he was sick formerly.}</string>
 			<key>RowSpacing</key>
 			<real>36</real>
 			<key>SheetTitle</key>
-			<string>MVP</string>
+			<string>Possible MVPs</string>
 			<key>UniqueID</key>
 			<integer>1</integer>
 			<key>VPages</key>
@@ -3561,7 +3569,7 @@ he was sick formerly.}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{59, 60.444873809814453}, {1036.5511474609375, 698}}</string>
+					<string>{{59, 60.444873809814453}, {1036.5511474609375, 626}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -3654,12 +3662,6 @@ What\'92s needed is a tool which minimises unnecessary cognitive work involved i
 - Multi selections can be turned into lists or rows\
 - Hover over an element in the right-hand column to show it\'92s origin (in the source column)\
 - Drag an object into an other object to make it a child of that object\
-\
-
-\f0\b Possible MVPs
-\f1\b0 \
-drag and drop paragraph linking\
-simple document mapper: lets you select bits of any document (xPath?) and connect them to a part of another document\
 \
 
 \f0\b Issues
@@ -32420,7 +32422,7 @@ hover to see corresponding test}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
@@ -32431,20 +32433,18 @@ hover to see corresponding test}</string>
 		<integer>142</integer>
 		<key>RightSidebar</key>
 		<false/>
-		<key>ShowRuler</key>
-		<true/>
 		<key>Sidebar</key>
 		<true/>
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{-73, 0}, {1301, 779}}</string>
+		<string>{{-80, -20}, {1316, 824}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
-				<string>MVP</string>
+				<string>Possible MVPs</string>
 				<real>1</real>
 				<real>0.97000002861022949</real>
 			</array>
