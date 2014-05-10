@@ -57,7 +57,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-05-10 14:55:25 +0000</string>
+	<string>2014-05-10 14:57:51 +0000</string>
 	<key>Modifier</key>
 	<string>Danny Hope</string>
 	<key>NotesVisible</key>
@@ -8930,87 +8930,6 @@ dictated to them}</string>
 			<key>GraphicsList</key>
 			<array>
 				<dict>
-					<key>Bounds</key>
-					<string>{{231.4409277439118, 950.4999869579151}, {15, 15}}</string>
-					<key>Class</key>
-					<string>ShapedGraphic</string>
-					<key>FontInfo</key>
-					<dict>
-						<key>Font</key>
-						<string>HelveticaNeue</string>
-						<key>Size</key>
-						<real>12</real>
-					</dict>
-					<key>ID</key>
-					<integer>41741</integer>
-					<key>Shape</key>
-					<string>Rectangle</string>
-					<key>Style</key>
-					<dict>
-						<key>fill</key>
-						<dict>
-							<key>Color</key>
-							<dict>
-								<key>b</key>
-								<string>0.998385</string>
-								<key>g</key>
-								<string>0.998368</string>
-								<key>r</key>
-								<string>0.998398</string>
-							</dict>
-							<key>GradientCenter</key>
-							<string>{0, -0.15238095234285712}</string>
-							<key>MiddleFraction</key>
-							<real>0.41927081346511841</real>
-						</dict>
-						<key>shadow</key>
-						<dict>
-							<key>Beneath</key>
-							<string>YES</string>
-							<key>Color</key>
-							<dict>
-								<key>a</key>
-								<string>0.25</string>
-								<key>b</key>
-								<string>0</string>
-								<key>g</key>
-								<string>0</string>
-								<key>r</key>
-								<string>0</string>
-							</dict>
-							<key>Fuzziness</key>
-							<real>2.8369686603546143</real>
-							<key>ShadowVector</key>
-							<string>{0, 1}</string>
-						</dict>
-						<key>stroke</key>
-						<dict>
-							<key>Color</key>
-							<dict>
-								<key>a</key>
-								<string>0.07</string>
-								<key>b</key>
-								<string>0</string>
-								<key>g</key>
-								<string>0</string>
-								<key>r</key>
-								<string>0</string>
-							</dict>
-							<key>CornerRadius</key>
-							<real>24</real>
-						</dict>
-					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Pad</key>
-						<integer>11</integer>
-						<key>VerticalPad</key>
-						<integer>2</integer>
-					</dict>
-					<key>Wrap</key>
-					<string>NO</string>
-				</dict>
-				<dict>
 					<key>Class</key>
 					<string>Group</string>
 					<key>Graphics</key>
@@ -15623,7 +15542,7 @@ drag the dot to reposition it\'92s content content\
 			<key>RowSpacing</key>
 			<real>36</real>
 			<key>SheetTitle</key>
-			<string>Canvas 2</string>
+			<string>UI</string>
 			<key>UniqueID</key>
 			<integer>2</integer>
 			<key>VPages</key>
@@ -32330,7 +32249,7 @@ hover to see corresponding test}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>0</integer>
+		<integer>4</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
@@ -32346,7 +32265,7 @@ hover to see corresponding test}</string>
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{-80, 1}, {1316, 824}}</string>
+		<string>{{-81, 705}, {1316, 824}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
@@ -32357,7 +32276,7 @@ hover to see corresponding test}</string>
 				<real>0.97000002861022949</real>
 			</array>
 			<array>
-				<string>Canvas 2</string>
+				<string>UI</string>
 				<real>1</real>
 				<real>8</real>
 			</array>
