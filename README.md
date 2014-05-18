@@ -1,10 +1,10 @@
 Grok
 ====
-
-An app for visualising semantic structure to make documents easier to understand
-Externalise your mental model of a document
-Quickly parse complex documents
-Make documents easier to parse
+1-line explainations
+- An app for visualising semantic structure to make documents easier to understand
+- Externalise your mental model of a document
+- Quickly parse complex documents
+- Make documents easier to parse
 
 ## Current situation
 When reading complex documents there’s a cognitive overhead to parsSome documents deserve restructuring but this work is cognitively demanding because one must keep in short term memory the original structure and meaning along with candidates for the new structure.
