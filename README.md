@@ -1,6 +1,6 @@
 Grok
 ====
-1-line explainations
+1-line explainations:
 - An app for visualising semantic structure to make documents easier to understand
 - Externalise your mental model of a document
 - Quickly parse complex documents
