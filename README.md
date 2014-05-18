@@ -28,11 +28,13 @@ What’s needed is a tool which minimises unnecessary cognitive work involved in
 
 ### Specific interactions
 - Pressing return splits the object
-	Container element	| What’s created/where
-	-------------------	|--------------------------
-	P					| 2nd P
-	LI					| li (inserted in the list) 
-	TD					| 2 Ps inside the TD
+<pre>
+	Container element  | What’s created/where
+	-------------------|--------------------------
+	P                  | 2nd P
+	LI                 | li (inserted in the list) 
+	TD                 | 2 Ps inside the TD
+</pre>
 - Multiple objects can be selected (⌘-click or whatever)
 - Multi selections can be turned into lists or rows
 - Hover over an element in the right-hand column to show it’s origin (in the source column)
