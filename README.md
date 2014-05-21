@@ -17,10 +17,11 @@ What’s needed is a tool which minimises unnecessary cognitive work involved in
 
 [Issues](https://github.com/dannyhope/Grok/issues "")
 
-- The main problems I have right now are:
+Want to help? The main problems I have right now are:
 	- explaining the core concept
 	- figure out what to build first
 
+Have a look at the **woefully incomplete** design doc: [Grok.graffle](https://github.com/dannyhope/Grok/raw/master/Grok.graffle "") (requires [OmniGraffle](http://www.omnigroup.com/download/latest/omniGraffle ""))
 
 ## How it could work
 
@@ -46,6 +47,7 @@ What’s needed is a tool which minimises unnecessary cognitive work involved in
 - [Split, tabulate, contract](http://youtu.be/5rkMFeTGPUA "")
  
 ### Specific interactions
+
 - Pressing return splits the object
 <pre>
 	Container element  | What’s created/where
