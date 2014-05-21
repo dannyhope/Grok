@@ -43,7 +43,7 @@ What’s needed is a tool which minimises unnecessary cognitive work involved in
 ## Objectish way
 
 - [Create table, split cell, delete string](Create table, split cell, delete string.mov "")
-- [Repos/Grok/Split, tabulate, contract](Repos/Grok/Split, tabulate, contract.mov "")
+- [Repos/Grok/Split, tabulate, contract](Split, tabulate, contract.mov "")
 - [ ] flesh-out objectish description
  
 ### Specific interactions
