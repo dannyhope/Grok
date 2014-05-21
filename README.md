@@ -15,13 +15,13 @@ What’s needed is a tool which minimises unnecessary cognitive work involved in
 
 ## Help
 
-[Issues](https://github.com/dannyhope/Grok/issues "")
+The main issues I’m facing (and needd help with) right now are:
+	- [how to explain the core concept](https://github.com/dannyhope/Grok/issues/3 "")
+	- [figuring out what to build first](https://github.com/dannyhope/Grok/issues/4 "")
 
-Want to help? The main problems I have right now are:
-	- explaining the core concept
-	- figure out what to build first
+I’d appreciate your thoughts on the stuff in the **woefully incomplete** design doc: [Grok.graffle](https://github.com/dannyhope/Grok/raw/master/Grok.graffle "") (requires [OmniGraffle](http://www.omnigroup.com/download/latest/omniGraffle ""))
 
-Have a look at the **woefully incomplete** design doc: [Grok.graffle](https://github.com/dannyhope/Grok/raw/master/Grok.graffle "") (requires [OmniGraffle](http://www.omnigroup.com/download/latest/omniGraffle ""))
+[Please tweet feedback/thoughts to @yandle](http://twitter.com/yandle "Me on Twitter")
 
 ## How it could work
 
@@ -46,7 +46,7 @@ Have a look at the **woefully incomplete** design doc: [Grok.graffle](https://gi
 - [Create table, split cell, delete string](http://youtu.be/ybJWXC9q0as "")
 - [Split, tabulate, contract](http://youtu.be/5rkMFeTGPUA "")
  
-### Specific interactions
+## Specific interactions
 
 - Pressing return splits the object
 <pre>
@@ -62,4 +62,4 @@ Have a look at the **woefully incomplete** design doc: [Grok.graffle](https://gi
 - Drag an object into an other object to make it a child of that object
 
 
-Feedback/ideas: [@yandle](http://twitter.com/yandle "Me on Twitter")
+[Please tweet feedback/thoughts to @yandle](http://twitter.com/yandle "Me on Twitter")
