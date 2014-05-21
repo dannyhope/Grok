@@ -40,11 +40,10 @@ What’s needed is a tool which minimises unnecessary cognitive work involved in
 - Selections can be minimised (with shortcuts for quickly affecting descendants/siblings)
 - Changes are tracked so you can get back to any previous state (with a timeline slider or something)
 
-## Objectish way
+### Objectish way
 
 - [Create table, split cell, delete string](http://youtu.be/ybJWXC9q0as "")
 - [Split, tabulate, contract](http://youtu.be/5rkMFeTGPUA "")
-- [ ] flesh-out objectish description
  
 ### Specific interactions
 - Pressing return splits the object
