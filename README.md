@@ -22,12 +22,15 @@ What’s needed is a tool which minimises unnecessary cognitive work involved in
 	- figure out what to build first
 
 
-## How it works – the transclusionish way
-- Users want to parse a document – this is the source document
-- The view has 2 columns
-- The source document appears in the left column, a restructured document is built-up on the right
+## How it could work
+
+### The transclusionish way
+
+- Users indicate a source document
+- We take a copy of this, the copy is immutable (changes are stored as diffs)
+- We present 2 columns – the source document appears in the left column, the right column is where you do the restructuring stuff
 - Parts of the source can be transcluded into column 2
-- Parts that have been transcluded can be dimmed in the source
+- Parts that have been transcluded and are dimmed in the source
 - Content can be added to both the source and the restructured document
 - Transclusions can be edited (in this case diffs must be accessible)
 - Transclusions can be joined together to form:
@@ -36,6 +39,10 @@ What’s needed is a tool which minimises unnecessary cognitive work involved in
 	- lists and tables can be nested inside each-other
 - Selections can be minimised (with shortcuts for quickly affecting descendants/siblings)
 - Changes are tracked so you can get back to any previous state (with a timeline slider or something)
+
+## Objectish way
+
+- [ ] needc to add this
 
 ### Specific interactions
 - Pressing return splits the object
