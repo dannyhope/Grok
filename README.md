@@ -6,7 +6,7 @@ When reading complex documents there’s a cognitive overhead to parsSome docume
 
 What’s needed is a tool which minimises unnecessary cognitive work involved in surfacing a document’s semantic structure.
 
-### 1-line explainations:
+### 1-line explainations
 - An app for visualising semantic structure to make documents easier to understand
 - Externalise your mental model of a document
 - Quickly parse complex documents
