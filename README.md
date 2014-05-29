@@ -61,5 +61,8 @@ I’d appreciate your thoughts on the stuff in the **woefully incomplete** desig
 - Hover over an element in the right-hand column to show it’s origin (in the source column)
 - Drag an object into an other object to make it a child of that object
 
+## Thanks
+
+Tom Ashworth for the name
 
 [Please tweet feedback/thoughts to @yandle](http://twitter.com/yandle "Me on Twitter")
