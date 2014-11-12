@@ -12,7 +12,6 @@ What’s needed is a tool which minimises unnecessary cognitive work involved in
 - Quickly parse complex documents
 - Make documents easier to parse
 
-
 ## Help
 
 The main issues I’m facing (and needd help with) right now are:
@@ -43,12 +42,12 @@ I’d appreciate your thoughts on the stuff in the **woefully incomplete** desig
 
 ### Objectish way
 
-- [Create table, split cell, delete string](http://youtu.be/ybJWXC9q0as "")
-- [Split, tabulate, contract](http://youtu.be/5rkMFeTGPUA "")
+- [▶ Create table, split cell, delete string](http://youtu.be/ybJWXC9q0as "")
+- [▶ Split, tabulate, contract](http://youtu.be/5rkMFeTGPUA "")
  
 ## Specific interactions
 
-- Pressing return splits the object
+- Pressing return bisects the object 
 <pre>
 	Container element  | What’s created/where
 	-------------------|--------------------------
