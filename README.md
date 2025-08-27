@@ -1,5 +1,3 @@
-[Please tweet feedback/thoughts to @yandle](http://twitter.com/yandle "Me on Twitter")
-
 ## Raison d'être
 
 When reading complex documents there’s a cognitive overhead to parsSome documents deserve restructuring but this work is cognitively demanding because one must keep in short term memory the original structure and meaning along with candidates for the new structure.
