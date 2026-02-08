@@ -74,6 +74,14 @@
 			showTranscludeButton = false;
 		}
 	}
+
+	function handleMouseEnter() {
+		grokState.setHoveredParagraph(paragraph.id);
+	}
+
+	function handleMouseLeave() {
+		grokState.setHoveredParagraph(null);
+	}
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -82,6 +90,8 @@
 		{isHighlighted ? 'bg-amber-100 ring-2 ring-amber-300' : 'hover:bg-muted/50'}"
 	data-paragraph-id={paragraph.id}
 	onmouseup={handleMouseUp}
+	onmouseenter={handleMouseEnter}
+	onmouseleave={handleMouseLeave}
 >
 	{#each segments as segment}
 		{#if segment.dimmed}

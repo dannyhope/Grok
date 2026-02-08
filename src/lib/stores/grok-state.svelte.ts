@@ -234,6 +234,11 @@ class GrokState {
 		}
 	}
 
+	setHoveredParagraph(paragraphId: ParagraphId | null) {
+		this.hoveredParagraphId = paragraphId;
+		this.hoveredNodeId = null;
+	}
+
 	undo() {
 		if (!this.canUndo) return;
 		this.historyIndex--;

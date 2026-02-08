@@ -6,7 +6,10 @@
 	let { node }: { node: TransclusionNode } = $props();
 
 	const isSelected = $derived(grokState.selectedNodeIds.has(node.id));
-	const isHovered = $derived(grokState.hoveredNodeId === node.id);
+	const isHovered = $derived(
+		grokState.hoveredNodeId === node.id ||
+		grokState.hoveredParagraphId === node.transclusion.paragraphId
+	);
 
 	function handleClick(event: MouseEvent) {
 		event.stopPropagation();
