@@ -8,6 +8,8 @@
 	let isEditing = $state(false);
 	let editText = $state("");
 	let showOriginal = $state(false);
+	let cursorOffset = $state<number | null>(null);
+	let textSpan: HTMLSpanElement | undefined = $state();
 
 	const isSelected = $derived(grokState.selectedNodeIds.has(node.id));
 	const isHovered = $derived(
@@ -66,6 +68,29 @@
 		grokState.revertTransclusion(node.id);
 		showOriginal = false;
 	}
+
+	function detectCursorOffset() {
+		const sel = window.getSelection();
+		if (!sel || sel.rangeCount === 0 || !textSpan) {
+			cursorOffset = null;
+			return;
+		}
+		const range = sel.getRangeAt(0);
+		if (!textSpan.contains(range.startContainer)) {
+			cursorOffset = null;
+			return;
+		}
+		const preRange = document.createRange();
+		preRange.setStart(textSpan, 0);
+		preRange.setEnd(range.startContainer, range.startOffset);
+		cursorOffset = preRange.toString().length;
+	}
+
+	function handleSplit() {
+		if (cursorOffset !== null && cursorOffset > 0 && cursorOffset < displayText.length) {
+			grokState.splitTransclusion(node.id, cursorOffset);
+		}
+	}
 </script>
 
 <ContextMenu.Root>
@@ -116,7 +141,13 @@
 							>Cancel</button>
 						</div>
 					{:else}
-						<span class={showOriginal ? 'text-muted-foreground italic' : ''}>{displayText}</span>
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
+						<span
+							bind:this={textSpan}
+							class={showOriginal ? 'text-muted-foreground italic' : ''}
+							onmouseup={detectCursorOffset}
+							oncontextmenu={detectCursorOffset}
+						>{displayText}</span>
 					{/if}
 				</div>
 				{#if !isCollapsed && !isEditing && hasEdits}
@@ -141,6 +172,11 @@
 		<ContextMenu.Item onclick={startEditing}>
 			Edit
 		</ContextMenu.Item>
+		{#if cursorOffset !== null && cursorOffset > 0 && cursorOffset < displayText.length}
+			<ContextMenu.Item onclick={handleSplit}>
+				Split here
+			</ContextMenu.Item>
+		{/if}
 		{#if hasEdits}
 			<ContextMenu.Item onclick={() => { showOriginal = !showOriginal; }}>
 				{showOriginal ? "Show edited" : "Show original"}

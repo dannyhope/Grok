@@ -268,6 +268,63 @@ class GrokState {
 		this.persist();
 	}
 
+	splitTransclusion(nodeId: NodeId, splitOffset: number) {
+		const node = this.restructured.nodes[nodeId];
+		if (node?.type !== "transclusion") return;
+
+		const t = node.transclusion;
+		if (splitOffset <= 0 || splitOffset >= t.text.length) return;
+
+		const sourceSplitPoint = t.startOffset + splitOffset;
+
+		const id1 = generateId("t");
+		const id2 = generateId("t");
+
+		const node1: TransclusionNode = {
+			id: id1,
+			type: "transclusion",
+			transclusion: {
+				paragraphId: t.paragraphId,
+				startOffset: t.startOffset,
+				endOffset: sourceSplitPoint,
+				text: t.text.slice(0, splitOffset),
+			},
+		};
+
+		const node2: TransclusionNode = {
+			id: id2,
+			type: "transclusion",
+			transclusion: {
+				paragraphId: t.paragraphId,
+				startOffset: sourceSplitPoint,
+				endOffset: t.endOffset,
+				text: t.text.slice(splitOffset),
+			},
+		};
+
+		this.restructured.nodes[id1] = node1;
+		this.restructured.nodes[id2] = node2;
+		delete this.restructured.nodes[nodeId];
+
+		// Replace in rootOrder
+		const rootIdx = this.restructured.rootOrder.indexOf(nodeId);
+		if (rootIdx >= 0) {
+			this.restructured.rootOrder.splice(rootIdx, 1, id1, id2);
+		}
+
+		// Replace in any list's children
+		for (const n of Object.values(this.restructured.nodes)) {
+			if (n.type === "list") {
+				const childIdx = n.children.indexOf(nodeId);
+				if (childIdx >= 0) {
+					n.children.splice(childIdx, 1, id1, id2);
+				}
+			}
+		}
+
+		this.pushHistory("Split transclusion");
+	}
+
 	editTransclusion(nodeId: NodeId, editedText: string) {
 		const node = this.restructured.nodes[nodeId];
 		if (node?.type !== "transclusion") return;
