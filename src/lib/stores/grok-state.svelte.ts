@@ -268,6 +268,24 @@ class GrokState {
 		this.persist();
 	}
 
+	editTransclusion(nodeId: NodeId, editedText: string) {
+		const node = this.restructured.nodes[nodeId];
+		if (node?.type !== "transclusion") return;
+		if (editedText === node.transclusion.text) {
+			delete node.editedText;
+		} else {
+			node.editedText = editedText;
+		}
+		this.pushHistory(`Edit transclusion "${editedText.slice(0, 30)}..."`);
+	}
+
+	revertTransclusion(nodeId: NodeId) {
+		const node = this.restructured.nodes[nodeId];
+		if (node?.type !== "transclusion") return;
+		delete node.editedText;
+		this.pushHistory("Revert transclusion");
+	}
+
 	toggleCollapsed(id: string) {
 		const next = new Set(this.collapsedIds);
 		if (next.has(id)) {

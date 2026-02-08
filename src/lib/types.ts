@@ -30,6 +30,7 @@ export interface RNodeBase {
 export interface TransclusionNode extends RNodeBase {
 	type: "transclusion";
 	transclusion: Transclusion;
+	editedText?: string;
 }
 
 export interface TextNode extends RNodeBase {
