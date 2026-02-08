@@ -33,6 +33,7 @@ class GrokState {
 	selectedNodeIds = $state<Set<NodeId>>(new Set());
 	hoveredNodeId = $state<NodeId | null>(null);
 	hoveredParagraphId = $state<ParagraphId | null>(null);
+	collapsedIds = $state<Set<string>>(new Set());
 
 	canUndo = $derived(this.historyIndex > 0);
 	canRedo = $derived(this.historyIndex < this.historyStack.length - 1);
@@ -74,6 +75,7 @@ class GrokState {
 			this.historyIndex = saved.historyIndex;
 			this.debugMode = saved.debugMode;
 			this.panelSizes = saved.panelSizes;
+			this.collapsedIds = new Set(saved.collapsedIds || []);
 		}
 	}
 
@@ -85,6 +87,7 @@ class GrokState {
 			historyIndex: this.historyIndex,
 			debugMode: this.debugMode,
 			panelSizes: this.panelSizes,
+			collapsedIds: Array.from(this.collapsedIds),
 		});
 	}
 
@@ -263,6 +266,21 @@ class GrokState {
 	setPanelSizes(sizes: number[]) {
 		this.panelSizes = sizes;
 		this.persist();
+	}
+
+	toggleCollapsed(id: string) {
+		const next = new Set(this.collapsedIds);
+		if (next.has(id)) {
+			next.delete(id);
+		} else {
+			next.add(id);
+		}
+		this.collapsedIds = next;
+		this.persist();
+	}
+
+	isCollapsed(id: string): boolean {
+		return this.collapsedIds.has(id);
 	}
 }
 

@@ -5,10 +5,16 @@
 	let { node }: { node: TextNode } = $props();
 
 	const isSelected = $derived(grokState.selectedNodeIds.has(node.id));
+	const isCollapsed = $derived(grokState.isCollapsed(`node-${node.id}`));
 
 	function handleClick(event: MouseEvent) {
 		event.stopPropagation();
 		grokState.selectNode(node.id, event.metaKey || event.ctrlKey);
+	}
+
+	function getPreview(text: string, maxChars: number = 50): string {
+		if (text.length <= maxChars) return text;
+		return text.slice(0, maxChars) + "…";
 	}
 </script>
 
@@ -21,6 +27,22 @@
 	onclick={handleClick}
 	title="Text node"
 >
-	<span class="text-xs text-muted-foreground">📝</span>
-	{node.text}
+	<div class="flex items-center gap-2">
+		<button
+			class="shrink-0 text-xs text-muted-foreground hover:text-foreground transition-colors"
+			onclick={(e) => {
+				e.stopPropagation();
+				grokState.toggleCollapsed(`node-${node.id}`);
+			}}
+			title={isCollapsed ? "Expand" : "Collapse"}
+		>
+			{isCollapsed ? "▶" : "▼"}
+		</button>
+		<span class="text-xs text-muted-foreground">📝</span>
+		{#if isCollapsed}
+			<span class="text-muted-foreground">{getPreview(node.text)}</span>
+		{:else}
+			<span>{node.text}</span>
+		{/if}
+	</div>
 </div>

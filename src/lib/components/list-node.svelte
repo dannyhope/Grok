@@ -6,6 +6,7 @@
 	let { node }: { node: ListNode } = $props();
 
 	const isSelected = $derived(grokState.selectedNodeIds.has(node.id));
+	const isCollapsed = $derived(grokState.isCollapsed(`node-${node.id}`));
 
 	const children = $derived(
 		node.children
@@ -47,12 +48,24 @@
 	title="List ({node.children.length} items)"
 >
 	<div class="mb-1 flex items-center gap-1 text-xs text-muted-foreground">
+		<button
+			class="shrink-0 text-xs text-muted-foreground hover:text-foreground transition-colors"
+			onclick={(e) => {
+				e.stopPropagation();
+				grokState.toggleCollapsed(`node-${node.id}`);
+			}}
+			title={isCollapsed ? "Expand" : "Collapse"}
+		>
+			{isCollapsed ? "▶" : "▼"}
+		</button>
 		<span>📋</span>
 		<span>List ({node.children.length})</span>
 	</div>
-	<div class="space-y-1 pl-3">
-		{#each children as child (child.id)}
-			<RNodeRenderer node={child} inList />
-		{/each}
-	</div>
+	{#if !isCollapsed}
+		<div class="space-y-1 pl-3">
+			{#each children as child (child.id)}
+				<RNodeRenderer node={child} inList />
+			{/each}
+		</div>
+	{/if}
 </div>

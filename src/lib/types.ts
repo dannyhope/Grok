@@ -61,4 +61,5 @@ export interface GrokPersisted {
 	historyIndex: number;
 	debugMode: boolean;
 	panelSizes: number[];
+	collapsedIds: string[];
 }
