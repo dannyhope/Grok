@@ -1,0 +1,1 @@
+grok- hover highglighting should be bidirectional

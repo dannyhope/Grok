@@ -1,0 +1,1 @@
+grok- make right-dide editable including show diffs feature

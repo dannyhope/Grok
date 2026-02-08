@@ -1,0 +1,1 @@
+grok: make it possible to minimise paragrephs in the right-hand panel
