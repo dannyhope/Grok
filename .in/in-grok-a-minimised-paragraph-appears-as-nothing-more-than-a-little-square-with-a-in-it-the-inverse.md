@@ -1,0 +1,1 @@
+In Grok a minimised paragraph appears as nothing more than a little square with a + in it. The inverse uses a small box with a −. Currently a triangle is used.
