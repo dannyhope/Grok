@@ -39,7 +39,6 @@
 			onmouseleave={handleMouseLeave}
 			title="From paragraph {node.transclusion.paragraphId} [{node.transclusion.startOffset}–{node.transclusion.endOffset}]"
 		>
-			<span class="text-xs text-muted-foreground">📎</span>
 			{node.transclusion.text}
 		</div>
 	</ContextMenu.Trigger>
