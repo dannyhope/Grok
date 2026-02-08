@@ -325,6 +325,203 @@ class GrokState {
 		this.pushHistory("Split transclusion");
 	}
 
+	listifyNode(nodeId: NodeId) {
+		const node = this.restructured.nodes[nodeId];
+		if (!node || node.type === "list") return;
+
+		if (node.type === "transclusion") {
+			const t = node.transclusion;
+			// Split by sentence boundaries (. ! ? followed by space or end)
+			const sentences = t.text.match(/[^.!?]+[.!?]+[\s]?|[^.!?]+$/g);
+			if (!sentences || sentences.length < 2) {
+				// Can't split into sentences — just wrap in a list as single item
+				const listId = generateId("l");
+				const list: ListNode = { id: listId, type: "list", children: [nodeId] };
+				this.restructured.nodes[listId] = list;
+
+				const rootIdx = this.restructured.rootOrder.indexOf(nodeId);
+				if (rootIdx >= 0) {
+					this.restructured.rootOrder.splice(rootIdx, 1, listId);
+				}
+				for (const n of Object.values(this.restructured.nodes)) {
+					if (n.type === "list" && n.id !== listId) {
+						const childIdx = n.children.indexOf(nodeId);
+						if (childIdx >= 0) {
+							n.children.splice(childIdx, 1, listId);
+						}
+					}
+				}
+				this.pushHistory("Listify (wrap)");
+				return;
+			}
+
+			// Create a transclusion node per sentence
+			const childIds: NodeId[] = [];
+			let offset = 0;
+			for (const sentence of sentences) {
+				const childId = generateId("t");
+				const trimmed = sentence.trimEnd();
+				const childNode: TransclusionNode = {
+					id: childId,
+					type: "transclusion",
+					transclusion: {
+						paragraphId: t.paragraphId,
+						startOffset: t.startOffset + offset,
+						endOffset: t.startOffset + offset + trimmed.length,
+						text: trimmed,
+					},
+				};
+				this.restructured.nodes[childId] = childNode;
+				childIds.push(childId);
+				offset += sentence.length;
+			}
+
+			// Create list and replace original
+			const listId = generateId("l");
+			const list: ListNode = { id: listId, type: "list", children: childIds };
+			this.restructured.nodes[listId] = list;
+			delete this.restructured.nodes[nodeId];
+
+			const rootIdx = this.restructured.rootOrder.indexOf(nodeId);
+			if (rootIdx >= 0) {
+				this.restructured.rootOrder.splice(rootIdx, 1, listId);
+			}
+			for (const n of Object.values(this.restructured.nodes)) {
+				if (n.type === "list" && n.id !== listId) {
+					const childIdx = n.children.indexOf(nodeId);
+					if (childIdx >= 0) {
+						n.children.splice(childIdx, 1, listId);
+					}
+				}
+			}
+			this.pushHistory("Listify (by sentence)");
+		} else if (node.type === "text") {
+			// Wrap text node in a list
+			const listId = generateId("l");
+			const list: ListNode = { id: listId, type: "list", children: [nodeId] };
+			this.restructured.nodes[listId] = list;
+
+			const rootIdx = this.restructured.rootOrder.indexOf(nodeId);
+			if (rootIdx >= 0) {
+				this.restructured.rootOrder.splice(rootIdx, 1, listId);
+			}
+			this.pushHistory("Listify (wrap text)");
+		}
+	}
+
+	mergeNodes(nodeIds: NodeId[]) {
+		if (nodeIds.length < 2) return;
+
+		// Get nodes in their current order (rootOrder or list children order)
+		const orderedIds = this.restructured.rootOrder.filter((id) => nodeIds.includes(id));
+
+		// Also check if they're all in the same list
+		let parentList: ListNode | null = null;
+		if (orderedIds.length === 0) {
+			for (const n of Object.values(this.restructured.nodes)) {
+				if (n.type === "list") {
+					const matching = n.children.filter((cId) => nodeIds.includes(cId));
+					if (matching.length === nodeIds.length) {
+						parentList = n;
+						break;
+					}
+				}
+			}
+		}
+
+		const idsInOrder = parentList
+			? parentList.children.filter((id) => nodeIds.includes(id))
+			: orderedIds;
+
+		if (idsInOrder.length < 2) return;
+
+		const nodes = idsInOrder.map((id) => this.restructured.nodes[id]).filter(Boolean);
+
+		// Check if all are transclusions from the same paragraph with contiguous offsets
+		const allTransclusions = nodes.every((n) => n.type === "transclusion");
+		let canMergeAsTransclusion = false;
+
+		if (allTransclusions) {
+			const tNodes = nodes as TransclusionNode[];
+			const sameParagraph = tNodes.every(
+				(n) => n.transclusion.paragraphId === tNodes[0].transclusion.paragraphId
+			);
+			if (sameParagraph) {
+				// Sort by startOffset and check contiguity
+				const sorted = [...tNodes].sort(
+					(a, b) => a.transclusion.startOffset - b.transclusion.startOffset
+				);
+				canMergeAsTransclusion = true;
+				for (let i = 1; i < sorted.length; i++) {
+					if (sorted[i].transclusion.startOffset !== sorted[i - 1].transclusion.endOffset) {
+						canMergeAsTransclusion = false;
+						break;
+					}
+				}
+			}
+		}
+
+		const mergedId = generateId("t");
+
+		if (canMergeAsTransclusion) {
+			const tNodes = nodes as TransclusionNode[];
+			const sorted = [...tNodes].sort(
+				(a, b) => a.transclusion.startOffset - b.transclusion.startOffset
+			);
+			const mergedNode: TransclusionNode = {
+				id: mergedId,
+				type: "transclusion",
+				transclusion: {
+					paragraphId: sorted[0].transclusion.paragraphId,
+					startOffset: sorted[0].transclusion.startOffset,
+					endOffset: sorted[sorted.length - 1].transclusion.endOffset,
+					text: sorted.map((n) => n.transclusion.text).join(""),
+				},
+			};
+			this.restructured.nodes[mergedId] = mergedNode;
+		} else {
+			// Merge as text node
+			const mergedText = nodes
+				.map((n) => {
+					if (n.type === "transclusion") return n.editedText ?? n.transclusion.text;
+					if (n.type === "text") return n.text;
+					return "";
+				})
+				.join(" ");
+
+			const mergedNode: TextNode = {
+				id: mergedId,
+				type: "text",
+				text: mergedText,
+			};
+			this.restructured.nodes[mergedId] = mergedNode;
+		}
+
+		// Replace first occurrence, remove the rest
+		const firstId = idsInOrder[0];
+		const restIds = new Set(idsInOrder.slice(1));
+
+		if (parentList) {
+			const firstIdx = parentList.children.indexOf(firstId);
+			parentList.children = parentList.children.filter((id) => !restIds.has(id));
+			const idx = parentList.children.indexOf(firstId);
+			parentList.children.splice(idx, 1, mergedId);
+		} else {
+			const firstIdx = this.restructured.rootOrder.indexOf(firstId);
+			this.restructured.rootOrder = this.restructured.rootOrder.filter((id) => !restIds.has(id));
+			const idx = this.restructured.rootOrder.indexOf(firstId);
+			this.restructured.rootOrder.splice(idx, 1, mergedId);
+		}
+
+		// Clean up old nodes
+		for (const id of idsInOrder) {
+			delete this.restructured.nodes[id];
+		}
+
+		this.selectedNodeIds = new Set();
+		this.pushHistory("Merge nodes");
+	}
+
 	editTransclusion(nodeId: NodeId, editedText: string) {
 		const node = this.restructured.nodes[nodeId];
 		if (node?.type !== "transclusion") return;

@@ -177,6 +177,9 @@
 				Split here
 			</ContextMenu.Item>
 		{/if}
+		<ContextMenu.Item onclick={() => grokState.listifyNode(node.id)}>
+			Listify
+		</ContextMenu.Item>
 		{#if hasEdits}
 			<ContextMenu.Item onclick={() => { showOriginal = !showOriginal; }}>
 				{showOriginal ? "Show edited" : "Show original"}

@@ -15,6 +15,11 @@
 		const ids = Array.from(grokState.selectedNodeIds);
 		if (ids.length >= 2) grokState.makeList(ids);
 	}
+
+	function handleMerge() {
+		const ids = Array.from(grokState.selectedNodeIds);
+		if (ids.length >= 2) grokState.mergeNodes(ids);
+	}
 </script>
 
 <div class="flex items-center gap-1 border-b px-3 py-1.5">
@@ -84,6 +89,20 @@
 					</Button>
 				</Tooltip.Trigger>
 				<Tooltip.Content>Make list (⌘L)</Tooltip.Content>
+			</Tooltip.Root>
+
+			<Tooltip.Root>
+				<Tooltip.Trigger>
+					<Button
+						size="sm"
+						variant="ghost"
+						onclick={handleMerge}
+						title="Merge selected (⌘M)"
+					>
+						Merge
+					</Button>
+				</Tooltip.Trigger>
+				<Tooltip.Content>Merge selected (⌘M)</Tooltip.Content>
 			</Tooltip.Root>
 		{/if}
 	{/if}
