@@ -12,10 +12,6 @@
 		grokState.selectNode(node.id, event.metaKey || event.ctrlKey);
 	}
 
-	function getPreview(text: string, maxChars: number = 50): string {
-		if (text.length <= maxChars) return text;
-		return text.slice(0, maxChars) + "…";
-	}
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -27,22 +23,29 @@
 	onclick={handleClick}
 	title="Text node"
 >
-	<div class="flex items-center gap-2">
+	{#if isCollapsed}
 		<button
 			class="shrink-0 text-xs text-muted-foreground hover:text-foreground transition-colors"
 			onclick={(e) => {
 				e.stopPropagation();
 				grokState.toggleCollapsed(`node-${node.id}`);
 			}}
-			title={isCollapsed ? "Expand" : "Collapse"}
-		>
-			{isCollapsed ? "▶" : "▼"}
-		</button>
-		<span class="text-xs text-muted-foreground">📝</span>
-		{#if isCollapsed}
-			<span class="text-muted-foreground">{getPreview(node.text)}</span>
-		{:else}
+			title="Expand"
+			aria-label="Expand"
+		>⊞</button>
+	{:else}
+		<div class="flex items-center gap-2">
+			<button
+				class="shrink-0 text-xs text-muted-foreground hover:text-foreground transition-colors"
+				onclick={(e) => {
+					e.stopPropagation();
+					grokState.toggleCollapsed(`node-${node.id}`);
+				}}
+				title="Collapse"
+				aria-label="Collapse"
+			>⊟</button>
+			<span class="text-xs text-muted-foreground">📝</span>
 			<span>{node.text}</span>
-		{/if}
-	</div>
+		</div>
+	{/if}
 </div>

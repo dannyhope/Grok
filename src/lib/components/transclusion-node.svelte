@@ -99,11 +99,6 @@
 		return computeDiff(node.transclusion.text, node.editedText);
 	});
 
-	function getPreview(text: string, maxChars: number = 50): string {
-		if (text.length <= maxChars) return text;
-		return text.slice(0, maxChars) + "…";
-	}
-
 	function handleClick(event: MouseEvent) {
 		event.stopPropagation();
 		grokState.selectNode(node.id, event.metaKey || event.ctrlKey);
@@ -184,77 +179,86 @@
 			onmouseleave={handleMouseLeave}
 			title="From paragraph {node.transclusion.paragraphId} [{node.transclusion.startOffset}–{node.transclusion.endOffset}]"
 		>
-			<div class="flex items-center gap-2">
+			{#if isCollapsed}
 				<button
 					class="shrink-0 text-xs text-muted-foreground hover:text-foreground transition-colors"
 					onclick={(e) => {
 						e.stopPropagation();
 						grokState.toggleCollapsed(`node-${node.id}`);
 					}}
-					title={isCollapsed ? "Expand" : "Collapse"}
-				>
-					{isCollapsed ? "▶" : "▼"}
-				</button>
-				<div class="flex-1 min-w-0">
-					{#if isCollapsed}
-						<span class="text-muted-foreground">{getPreview(displayText)}</span>
-					{:else if isEditing}
-						<textarea
-							class="w-full rounded border border-input bg-background px-2 py-1 text-sm resize-y min-h-[3em]"
-							bind:value={editText}
-							onkeydown={handleEditKeydown}
-							onclick={(e) => e.stopPropagation()}
-						></textarea>
-						<div class="flex gap-1 mt-1">
+					title="Expand"
+				aria-label="Expand"
+				>⊞</button>
+			{:else}
+				<div class="flex items-center gap-2">
+					<button
+						class="shrink-0 text-xs text-muted-foreground hover:text-foreground transition-colors"
+						onclick={(e) => {
+							e.stopPropagation();
+							grokState.toggleCollapsed(`node-${node.id}`);
+						}}
+						title="Collapse"
+						aria-label="Collapse"
+					>⊟</button>
+					<div class="flex-1 min-w-0">
+						{#if isEditing}
+							<textarea
+								class="w-full rounded border border-input bg-background px-2 py-1 text-sm resize-y min-h-[3em]"
+								bind:value={editText}
+								onkeydown={handleEditKeydown}
+								onclick={(e) => e.stopPropagation()}
+							></textarea>
+							<div class="flex gap-1 mt-1">
+								<button
+									class="text-xs px-2 py-0.5 rounded bg-primary text-primary-foreground hover:bg-primary/90"
+									onclick={(e) => { e.stopPropagation(); saveEdit(); }}
+									title="Save edit"
+								>Save</button>
+								<button
+									class="text-xs px-2 py-0.5 rounded bg-muted text-muted-foreground hover:bg-muted/80"
+									onclick={(e) => { e.stopPropagation(); cancelEdit(); }}
+									title="Cancel edit"
+								>Cancel</button>
+							</div>
+						{:else if viewMode === "diff" && hasEdits}
+							<span>
+								{#each diffSegments as seg}
+									{#if seg.type === "removed"}
+										<span class="text-red-300 line-through">{seg.text}</span>
+									{:else if seg.type === "added"}
+										<span class="font-bold text-green-600">{seg.text}</span>
+									{:else}
+										<span>{seg.text}</span>
+									{/if}
+								{/each}
+							</span>
+						{:else}
+							<!-- svelte-ignore a11y_no_static_element_interactions -->
+							<span
+								bind:this={textSpan}
+								class={viewMode === "original" ? 'text-muted-foreground italic' : ''}
+								onmouseup={detectCursorOffset}
+								oncontextmenu={detectCursorOffset}
+							>{displayText}</span>
+						{/if}
+					</div>
+					{#if !isEditing && hasEdits}
+						<div class="flex gap-1 shrink-0">
 							<button
-								class="text-xs px-2 py-0.5 rounded bg-primary text-primary-foreground hover:bg-primary/90"
-								onclick={(e) => { e.stopPropagation(); saveEdit(); }}
-								title="Save edit"
-							>Save</button>
+								class="text-xs px-1.5 py-0.5 rounded transition-colors
+									{viewMode !== 'edited' ? 'bg-blue-100 text-blue-700' : 'bg-muted text-muted-foreground hover:bg-muted/80'}"
+								onclick={(e) => { e.stopPropagation(); cycleViewMode(); }}
+								title="Show {nextModeLabel.toLowerCase()}"
+							>{nextModeLabel}</button>
 							<button
-								class="text-xs px-2 py-0.5 rounded bg-muted text-muted-foreground hover:bg-muted/80"
-								onclick={(e) => { e.stopPropagation(); cancelEdit(); }}
-								title="Cancel edit"
-							>Cancel</button>
+								class="text-xs px-1.5 py-0.5 rounded bg-muted text-muted-foreground hover:bg-red-100 hover:text-red-700 transition-colors"
+								onclick={(e) => { e.stopPropagation(); handleRevert(); }}
+								title="Revert to original text"
+							>Revert</button>
 						</div>
-					{:else if viewMode === "diff" && hasEdits}
-						<span>
-							{#each diffSegments as seg}
-								{#if seg.type === "removed"}
-									<span class="text-red-300 line-through">{seg.text}</span>
-								{:else if seg.type === "added"}
-									<span class="font-bold text-green-600">{seg.text}</span>
-								{:else}
-									<span>{seg.text}</span>
-								{/if}
-							{/each}
-						</span>
-					{:else}
-						<!-- svelte-ignore a11y_no_static_element_interactions -->
-						<span
-							bind:this={textSpan}
-							class={viewMode === "original" ? 'text-muted-foreground italic' : ''}
-							onmouseup={detectCursorOffset}
-							oncontextmenu={detectCursorOffset}
-						>{displayText}</span>
 					{/if}
 				</div>
-				{#if !isCollapsed && !isEditing && hasEdits}
-					<div class="flex gap-1 shrink-0">
-						<button
-							class="text-xs px-1.5 py-0.5 rounded transition-colors
-								{viewMode !== 'edited' ? 'bg-blue-100 text-blue-700' : 'bg-muted text-muted-foreground hover:bg-muted/80'}"
-							onclick={(e) => { e.stopPropagation(); cycleViewMode(); }}
-							title="Show {nextModeLabel.toLowerCase()}"
-						>{nextModeLabel}</button>
-						<button
-							class="text-xs px-1.5 py-0.5 rounded bg-muted text-muted-foreground hover:bg-red-100 hover:text-red-700 transition-colors"
-							onclick={(e) => { e.stopPropagation(); handleRevert(); }}
-							title="Revert to original text"
-						>Revert</button>
-					</div>
-				{/if}
-			</div>
+			{/if}
 		</div>
 	</ContextMenu.Trigger>
 	<ContextMenu.Content>

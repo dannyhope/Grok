@@ -47,21 +47,30 @@
 	ondrop={handleChildDrop}
 	title="List ({node.children.length} items)"
 >
-	<div class="mb-1 flex items-center gap-1 text-xs text-muted-foreground">
+	{#if isCollapsed}
 		<button
 			class="shrink-0 text-xs text-muted-foreground hover:text-foreground transition-colors"
 			onclick={(e) => {
 				e.stopPropagation();
 				grokState.toggleCollapsed(`node-${node.id}`);
 			}}
-			title={isCollapsed ? "Expand" : "Collapse"}
-		>
-			{isCollapsed ? "▶" : "▼"}
-		</button>
-		<span>📋</span>
-		<span>List ({node.children.length})</span>
-	</div>
-	{#if !isCollapsed}
+			title="Expand"
+			aria-label="Expand"
+		>⊞</button>
+	{:else}
+		<div class="mb-1 flex items-center gap-1 text-xs text-muted-foreground">
+			<button
+				class="shrink-0 text-xs text-muted-foreground hover:text-foreground transition-colors"
+				onclick={(e) => {
+					e.stopPropagation();
+					grokState.toggleCollapsed(`node-${node.id}`);
+				}}
+				title="Collapse"
+				aria-label="Collapse"
+			>⊟</button>
+			<span>📋</span>
+			<span>List ({node.children.length})</span>
+		</div>
 		<div class="space-y-1 pl-3">
 			{#each children as child (child.id)}
 				<RNodeRenderer node={child} inList />

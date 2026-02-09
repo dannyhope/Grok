@@ -13,11 +13,6 @@
 	const isHighlighted = $derived(grokState.hoveredParagraphId === paragraph.id);
 	const isCollapsed = $derived(grokState.isCollapsed(`src-${paragraph.id}`));
 
-	function getPreview(text: string, maxChars: number = 50): string {
-		if (text.length <= maxChars) return text;
-		return text.slice(0, maxChars) + "…";
-	}
-
 	function mergeRanges(ranges: Array<{ start: number; end: number }>) {
 		if (ranges.length === 0) return [];
 		const sorted = [...ranges].sort((a, b) => a.start - b.start);
@@ -99,18 +94,22 @@
 	onmouseenter={handleMouseEnter}
 	onmouseleave={handleMouseLeave}
 >
-	<div class="flex items-start gap-2">
+	{#if isCollapsed}
 		<button
-			class="shrink-0 mt-0.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+			class="shrink-0 text-xs text-muted-foreground hover:text-foreground transition-colors"
 			onclick={() => grokState.toggleCollapsed(`src-${paragraph.id}`)}
-			title={isCollapsed ? "Expand" : "Collapse"}
-		>
-			{isCollapsed ? "▶" : "▼"}
-		</button>
-		<div class="flex-1">
-			{#if isCollapsed}
-				<span class="text-muted-foreground">{getPreview(paragraph.text)}</span>
-			{:else}
+			title="Expand"
+			aria-label="Expand"
+		>⊞</button>
+	{:else}
+		<div class="flex items-start gap-2">
+			<button
+				class="shrink-0 mt-0.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+				onclick={() => grokState.toggleCollapsed(`src-${paragraph.id}`)}
+				title="Collapse"
+				aria-label="Collapse"
+			>⊟</button>
+			<div class="flex-1">
 				{#each segments as segment}
 					{#if segment.dimmed}
 						<span class="text-muted-foreground/40 line-through decoration-muted-foreground/20">{segment.text}</span>
@@ -118,9 +117,9 @@
 						<span>{segment.text}</span>
 					{/if}
 				{/each}
-			{/if}
+			</div>
 		</div>
-	</div>
+	{/if}
 </div>
 
 {#if showTranscludeButton}
