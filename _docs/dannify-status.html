@@ -15,32 +15,32 @@
 <body>
   <div class="page">
     <h1>Dannify status — Grok</h1>
-    <p class="meta">Living audit. Regenerated whenever <code>/dannify</code> runs. Last updated: 2026-08-25.</p>
+    <p class="meta">Living audit. Regenerated whenever <code>/dannify</code> runs. Last updated: 2026-08-28.</p>
     <p class="hint">What still needs doing, then what’s already up to spec. Product truth is <code>_docs/spec.md</code> and <code>_docs/design.md</code>. Current KPI is <code>_docs/now.md</code>. Audited the SvelteKit app at <code>Repos/grok</code>.</p>
 
     <section class="panel">
       <h2>Improvements</h2>
       <h3>Must</h3>
       <ul>
-        <li>Add <code>_docs/spec.md</code> covering purpose, surfaces (source + restructured panes, toolbar, debug), behaviour, and non-goals</li>
-        <li>Add <code>_docs/design.md</code> as look source of truth (layout, panes, muted credit, OS theme)</li>
-        <li>Add “A Danny Hope product” attribution → <code>https://dannyhope.co.uk</code> (footer or toolbar chrome)</li>
-        <li>Replace public third-party hrefs in README (GitHub issues/raw, Twitter <code>@yandle</code>) with dannyhope.co.uk hops</li>
+        <li>🔴 Add <code>_docs/spec.md</code> covering purpose, surfaces (source + restructured panes, toolbar, debug), behaviour, accessibility level, and non-goals</li>
+        <li>🔴 Add <code>_docs/design.md</code> as look source of truth (layout, panes, muted credit, OS theme)</li>
+        <li>🔴 Add “A Danny Hope product” attribution → <code>https://dannyhope.co.uk</code> (footer or toolbar chrome)</li>
+        <li>🔴 Replace public third-party hrefs in README (GitHub issues/raw, Twitter <code>@yandle</code>) with dannyhope.co.uk hops</li>
       </ul>
       <h3>Should</h3>
       <ul>
-        <li>Add <code>_docs/now.md</code> with a current KPI (<code>/goal</code>)</li>
-        <li>Add <code>_vibing/</code> to <code>.gitignore</code> and create the directory</li>
-        <li>Point user-facing feedback at <code>https://dannyhope.co.uk/feedback</code> (drop public Twitter ask)</li>
-        <li>State an accessibility level in <code>_docs/spec.md</code> (honest “none” is fine)</li>
-        <li>Add <code>.dev-port</code> + <code>scripts/resolve-dev-port.sh</code> and wire <code>npm run dev</code> through it (Vite currently uses 5173)</li>
-        <li>Add Grok to Bombay <code>projects.json</code> (path <code>…/Repos/grok</code>)</li>
-        <li>Add usability-test scaffold (<code>_docs/usability-tasks.json</code> + <code>usability-test.html</code>)</li>
-        <li>Map product theme tokens in <code>src/app.css</code> to brand.md (Cool Grey / Danny Hope Ltd palette) instead of default shadcn greys; prefer Museo Sans over system UI</li>
+        <li>🟠 Add <code>_docs/now.md</code> with a current KPI (<code>/goal</code>)</li>
+        <li>🟠 Add <code>_vibing/</code> to <code>.gitignore</code> and create the directory</li>
+        <li>🟠 Point user-facing feedback at <code>https://dannyhope.co.uk/feedback</code> (drop public Twitter ask)</li>
+        <li>🟠 Add <code>.dev-port</code> + <code>scripts/resolve-dev-port.sh</code> and wire <code>npm run dev</code> through it (Vite currently uses 5173)</li>
+        <li>🟠 Add <code>scripts/ensure-local-domain.sh</code> and map <code>grok.test</code> to loopback in <code>/etc/hosts</code>, checking it before development starts</li>
+        <li>🟠 Add Grok to Bombay <code>projects.json</code> (path <code>…/Repos/grok</code>)</li>
+        <li>🟠 Add usability-test scaffold (<code>_docs/usability-tasks.json</code> + <code>usability-test.html</code>)</li>
+        <li>🟠 Map product theme tokens in <code>src/app.css</code> to brand.md (Cool Grey / Danny Hope Ltd palette) instead of default shadcn greys; prefer Museo Sans over system UI</li>
       </ul>
       <h3>Nice</h3>
       <ul>
-        <li>Offer Prototype Panels (Flags + site modes + docks) for the Debug surface instead of a one-off drawer only</li>
+        <li>🟢 Offer Prototype Panels (Flags + site modes + docks) for the Debug surface instead of a one-off drawer only</li>
       </ul>
     </section>
 
@@ -56,6 +56,9 @@
         <li>Not a browser extension or Figma plugin (those rows N/A)</li>
         <li>Not a Tauri/native webview wrapper (Open in browser / Rebuild desktop N/A)</li>
         <li>Undo/redo already in the product toolbar</li>
+        <li><code>.gitignore</code> excludes <code>.DS_Store</code></li>
+        <li>Local server uses SvelteKit/Vite HMR in development</li>
+        <li>Tooltips are available for product controls</li>
       </ul>
     </section>
   </div>
