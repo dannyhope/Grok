@@ -23,11 +23,11 @@ grok- introduce projects – a project has 0 or more input files, an input file 
 - **Estimated complexity:** Large (architectural change, multi-session implementation)
 
 ### Questions for refinement
-1. Should each file have independent version history or unified project timeline?
-2. How should files be added/removed/renamed in a project?
-3. Should projects have their own persistence layer (local storage, file system API, cloud)?
-4. Is this the right scope for Sapling or should it remain a single-file version control demo?
-5. Should this be a separate product/fork rather than adding complexity to Sapling?
+1. **When someone edits a file, should they see only that file’s history, or one history for the whole project?**
+2. **What should happen when someone adds, removes, or renames a file?** For example, should the action be undoable?
+3. **Where should projects be saved?** Choose one for the first version: this browser on this device, files on the device, or an online account.
+4. **Should Grok become a multi-file tool, or should it stay focused on one file?**
+5. **If it becomes a multi-file tool, should this be a separate product rather than a change to Grok?**
 
 ### Dependencies
 - May conflict with current single-document architecture

@@ -4,7 +4,8 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "npm run local-domain && vite dev --host 127.0.0.1 --strictPort --port 5741",
+		"local-domain": "scripts/ensure-local-domain.sh",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",

@@ -20,7 +20,10 @@
 - **Estimated complexity:** Unknown pending investigation
 
 ### Questions for refinement
-- Will be identified during interactive `/refine` session
+1. **When someone edits one transclusion, should its past versions be separate from the past versions of every other transclusion?**
+2. **What should someone be able to do with an older version?** For example, view it, restore it, compare it with the current version, or make a new branch from it.
+3. **How should someone find a transclusion’s past versions?** For example, a history button on each transclusion or one history view for the whole document.
+4. **What is the smallest useful first version of this feature?** Choose the first action to support: view, restore, compare, or create a branch.
 
 ### Dependencies
 - To be determined

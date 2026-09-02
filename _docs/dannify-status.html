@@ -32,9 +32,8 @@
         <li>🟠 Add <code>_docs/now.md</code> with a current KPI (<code>/goal</code>)</li>
         <li>🟠 Add <code>_vibing/</code> to <code>.gitignore</code> and create the directory</li>
         <li>🟠 Point user-facing feedback at <code>https://dannyhope.co.uk/feedback</code> (drop public Twitter ask)</li>
-        <li>🟠 Add <code>.dev-port</code> + <code>scripts/resolve-dev-port.sh</code> and wire <code>npm run dev</code> through it (Vite currently uses 5173)</li>
-        <li>🟠 Add <code>scripts/ensure-local-domain.sh</code> and map <code>grok.test</code> to loopback in <code>/etc/hosts</code>, checking it before development starts</li>
-        <li>🟠 Add Grok to Bombay <code>projects.json</code> (path <code>…/Repos/grok</code>)</li>
+        <li>✅ Add <code>.dev-port</code> (5741), <code>scripts/ensure-local-domain.sh</code>, and wire <code>npm run dev</code> through the loopback hostname check</li>
+        <li>🟠 Add Grok to Bombay <code>projects.json</code> (route <code>grok.local → 127.0.0.1:5741</code>; path <code>…/Repos/grok</code>)</li>
         <li>🟠 Add usability-test scaffold (<code>_docs/usability-tasks.json</code> + <code>usability-test.html</code>)</li>
         <li>🟠 Map product theme tokens in <code>src/app.css</code> to brand.md (Cool Grey / Danny Hope Ltd palette) instead of default shadcn greys; prefer Museo Sans over system UI</li>
       </ul>
