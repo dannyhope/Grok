@@ -15,49 +15,47 @@
 <body>
   <div class="page">
     <h1>Dannify status — Grok</h1>
-    <p class="meta">Living audit. Regenerated whenever <code>/dannify</code> runs. Last updated: 2026-08-28.</p>
+    <p class="meta">Living audit. Regenerated whenever <code>/dannify</code> runs. Last updated: 2026-09-07.</p>
     <p class="hint">What still needs doing, then what’s already up to spec. Product truth is <code>_docs/spec.md</code> and <code>_docs/design.md</code>. Current KPI is <code>_docs/now.md</code>. Audited the SvelteKit app at <code>Repos/grok</code>.</p>
 
     <section class="panel">
       <h2>Improvements</h2>
       <h3>Must</h3>
       <ul>
-        <li>🔴 Add <code>_docs/spec.md</code> covering purpose, surfaces (source + restructured panes, toolbar, debug), behaviour, accessibility level, and non-goals</li>
-        <li>🔴 Add <code>_docs/design.md</code> as look source of truth (layout, panes, muted credit, OS theme)</li>
-        <li>🔴 Add “A Danny Hope product” attribution → <code>https://dannyhope.co.uk</code> (footer or toolbar chrome)</li>
-        <li>🔴 Replace public third-party hrefs in README (GitHub issues/raw, Twitter <code>@yandle</code>) with dannyhope.co.uk hops</li>
+        <li>🔴 Expand <code>_docs/spec.md</code> into the living product spec: purpose, current surfaces, behaviour, priorities/fallbacks, non-goals, and an honest accessibility level.</li>
+        <li>🔴 Add <code>_docs/design.md</code> as the visual source of truth for the two-pane workspace, toolbar/debug surface, tokens, typography, motion, and interaction states.</li>
+        <li>🔴 Add “A Danny Hope product” attribution linking to <code>https://dannyhope.co.uk</code> in the product chrome.</li>
+        <li>🔴 Replace public third-party links in <code>README.md</code> with stable <code>dannyhope.co.uk</code> hops, including feedback, issue/design references, videos, and the OmniGraffle link.</li>
       </ul>
       <h3>Should</h3>
       <ul>
-        <li>🟠 Add <code>_docs/now.md</code> with a current KPI (<code>/goal</code>)</li>
-        <li>🟠 Add <code>_vibing/</code> to <code>.gitignore</code> and create the directory</li>
-        <li>🟠 Point user-facing feedback at <code>https://dannyhope.co.uk/feedback</code> (drop public Twitter ask)</li>
-        <li>✅ Add <code>.dev-port</code> (5741), <code>scripts/ensure-local-domain.sh</code>, and wire <code>npm run dev</code> through the loopback hostname check</li>
-        <li>🟠 Add Grok to Bombay <code>projects.json</code> (route <code>grok.local → 127.0.0.1:5741</code>; path <code>…/Repos/grok</code>)</li>
-        <li>🟠 Add usability-test scaffold (<code>_docs/usability-tasks.json</code> + <code>usability-test.html</code>)</li>
-        <li>🟠 Map product theme tokens in <code>src/app.css</code> to brand.md (Cool Grey / Danny Hope Ltd palette) instead of default shadcn greys; prefer Museo Sans over system UI</li>
+        <li>🟠 Add <code>_docs/now.md</code> with a current, measurable project KPI through <code>/goal</code>; the wider goal relationship is currently unverified because the canonical Goals page was not refreshed.</li>
+        <li>🟠 Add <code>_vibing/</code> to <code>.gitignore</code> and create the ignored directory.</li>
+        <li>🟠 Add an executable, documented <code>scripts/launch.sh</code> that reuses the healthy local service and exposes a bounded health check.</li>
+        <li>🟠 Add a usability-test scaffold: <code>_docs/usability-issues.md</code>, <code>_docs/usability-tasks.json</code>, and <code>usability-test.html</code>.</li>
+        <li>🟠 Add a product feedback link to <code>https://dannyhope.co.uk/feedback</code> and remove the public Twitter feedback request.</li>
+        <li>🟠 Replace the default monochrome shadcn tokens in <code>src/app.css</code> with the documented Danny Hope palette and Museo Sans fallback stack; record the decision in <code>_docs/design.md</code>.</li>
+        <li>🟠 Add a Shift+? / Shift+/ shortcut overlay listing the seven current shortcuts, with the shortcut shown in each control tooltip and accessible dismissal.</li>
+        <li>🟠 Add the applicable automated checker reports under <code>_docs/checks/</code>; current checker state is never run for product, usability, evidence, design-system, accessibility, security, performance, and deployment.</li>
       </ul>
       <h3>Nice</h3>
       <ul>
-        <li>🟢 Offer Prototype Panels (Flags + site modes + docks) for the Debug surface instead of a one-off drawer only</li>
+        <li>🟢 Offer the shared Prototype Panels developer surface for Debug/Flags/site modes, rather than expanding the one-off debug drawer.</li>
       </ul>
     </section>
 
     <section class="panel">
       <h2>Already right</h2>
       <ul>
-        <li><code>.in/</code> inbox exists</li>
-        <li><code>grok.code-workspace</code> with Peacock colour</li>
-        <li><code>CLAUDE.md</code> for stack and architecture</li>
-        <li>README opens with purpose (Raison d’être) before Help</li>
-        <li>Product UI is on shadcn-svelte (bits-ui)</li>
-        <li>No appearance / Light–Dark theme picker in the app chrome</li>
-        <li>Not a browser extension or Figma plugin (those rows N/A)</li>
-        <li>Not a Tauri/native webview wrapper (Open in browser / Rebuild desktop N/A)</li>
-        <li>Undo/redo already in the product toolbar</li>
-        <li><code>.gitignore</code> excludes <code>.DS_Store</code></li>
-        <li>Local server uses SvelteKit/Vite HMR in development</li>
-        <li>Tooltips are available for product controls</li>
+        <li><code>.in/</code> inbox exists, with an outstanding portability task.</li>
+        <li><code>grok.code-workspace</code> and <code>CLAUDE.md</code> exist.</li>
+        <li>README begins with the project purpose before setup/help.</li>
+        <li>Product UI uses shadcn-svelte/Bits UI primitives and SvelteKit/Vite HMR.</li>
+        <li>OS theme switching is not exposed as a product appearance picker.</li>
+        <li><code>.dev-port</code> is committed at <code>5741</code>; <code>.local-domain</code> is <code>grok.local</code>, mapped to loopback, and checked before <code>npm run dev</code>.</li>
+        <li>Undo and redo are available in the toolbar with keyboard shortcuts and tooltips.</li>
+        <li><code>.gitignore</code> excludes <code>.DS_Store</code>; generated build directories are ignored.</li>
+        <li>Not a Chrome/Chromium extension, Figma plugin, public website, or native webview wrapper; extension, Figma, sitemap, Open in browser, and Rebuild desktop app checks are N/A.</li>
       </ul>
     </section>
   </div>

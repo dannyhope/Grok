@@ -1,4 +1,5 @@
 # Sapling-style versioning per transclusion
+**Readiness:** auto-refined
 **Done when:** Each transclusion maintains its own version history with branching, allowing users to navigate between past edits and create alternative versions.
 
 ## Context

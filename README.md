@@ -16,6 +16,8 @@ What’s needed is a tool which minimises unnecessary cognitive work involved in
 
 Run `npm install`, then `npm run dev`. Open [http://grok.local/](http://grok.local/) through Bombay's shared local proxy; the app's development server runs on port `5741` with Vite/SvelteKit live reload. The startup check verifies that `grok.local` resolves to `127.0.0.1`.
 
+With the development server already running, double-click `scripts/launch.sh` (or run it from the project root) to perform a bounded health check and open Grok at [http://grok.local/](http://grok.local/).
+
 The main issues I’m facing (and needd help with) right now are:
 	- [how to explain the core concept](https://github.com/dannyhope/Grok/issues/3 "")
 	- [figuring out what to build first](https://github.com/dannyhope/Grok/issues/4 "")
